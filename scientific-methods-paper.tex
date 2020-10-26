@@ -1,0 +1,224 @@
+\documentclass[twocolumn, switch]{article}
+
+\usepackage{preprint}
+
+%% Math packages
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+
+%% General packages
+\usepackage[utf8]{inputenc}	% allow utf-8 input
+\usepackage[T1]{fontenc}	% use 8-bit T1 fonts
+\usepackage{xcolor}		% colors for hyperlinks
+\usepackage[colorlinks = true,
+linkcolor = purple,
+urlcolor  = blue,
+citecolor = cyan,
+anchorcolor = black]{hyperref}	% Color links to references, figures, etc.
+\usepackage{booktabs} 		% professional-quality tables
+\usepackage{nicefrac}		% compact symbols for 1/2, etc.
+\usepackage{microtype}		% microtypography
+\usepackage{lineno}		% Line numbers
+\usepackage{float}			% Allows for figures within multicol
+%\usepackage{multicol}		% Multiple columns (Method B)
+\usepackage{complexity}
+\usepackage{dirtytalk}
+\usepackage{tabularx}
+
+\usepackage[backend=biber,alldates=iso8601]{biblatex}
+
+\bibliography{scientific-methods-paper}
+
+%% Special figure caption options
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[name={Supplementary Figure}]{suppfigure}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+
+% Section title spacing  options
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 3pt minus 3pt}{1pt plus 1pt minus 1pt}
+\titlespacing\subsection{0pt}{10pt plus 3pt minus 3pt}{1pt plus 1pt minus 1pt}
+\titlespacing\subsubsection{0pt}{8pt plus 3pt minus 3pt}{1pt plus 1pt minus 1pt}
+
+% Centered X column
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+%%%%%%%%%%%%%%%%   Title   %%%%%%%%%%%%%%%%
+\title{Perception of Sexism in Computer Science-Related Fields}
+
+%%%%%%%%%%%%%%%  Author list  %%%%%%%%%%%%%%%
+\author{
+  Steven~Oud \\
+  Software for Science \\
+  Amsterdam University of Applied Sciences\\
+  \texttt{steven.oud@hva.nl} \\
+}
+
+%%%%%%%%%%%%%%    Front matter    %%%%%%%%%%%%%%
+\begin{document}
+    
+    \twocolumn[
+    \begin{@twocolumnfalse}
+        
+        \maketitle
+        
+        %\begin{abstract}
+        %\end{abstract}
+        
+    \end{@twocolumnfalse}
+    ]
+
+    \section{Introduction}
+    % description of the background, problem statement - exploratory study
+    Computer science-related fields have seen a growing gender disparity since the rapid development of the field~\cite{camp2001women, chan2000gender}.
+    % why is it relevant to science and society
+    This gender imbalance has possible negative impacts on science and society.
+    For example, \textcite{williams2014you} claims that because many technical decisions are made by men, technology may be unintentionally biased towards men.
+    Research has also shown that diversity in a team allowed for more creativity, potential, and productivity~\cite{dubow2013diversity}.
+    On the other hand, there have been contrasting results in research towards the impact of gender-diverse teams~\cite{svyantek2004received}.
+    It seems there are too many variables that are applicable and not enough data available to come to a general conclusion on the importance of gender-diverse teams.
+    
+    We know from statistics that women are generally underrepresented in computer science and related fields~\cite{salminen1999bringing}.
+    A report from 2013 stated that less than 24\% of all United States programmers are female~\cite{sydell2013blazing}.
+    There are however exceptions, mostly when we look beyond the western world.
+    Malaysian women represent about half of the computer science students~\cite{lagesen2008cyberfeminist}, and Arab women made up 59\% of the computer science students in 2014~\cite{Alghamdi971716}.
+    These gender distributions seem encouraging for gender equality, showing there are no innate reasons women should be underrepresented, only societal reasons.
+    
+    % description of literature research, description of limitations of research
+    This report will look at the perception of sexism in computer science-related fields using a deductive approach.
+    It will give an answer to the research question ``What is the perception of sexism in computer science-related fields?"
+    We use both quantitative and qualitative research methods to come to a conclusion.
+    A narrative literature review was done to gather information and build an underlying understanding about the topic.
+    This gives us a high level overview of the most important publications and concepts.
+    After multiple revisions of the research question, field research was conducted by sending a survey to relatives and friends.
+    Because we are all enrolled in a computer science-related study, we are likely connected to like-minded people.
+    Hence it would be incorrect to take any conclusion drawn from analyzing this data to apply to the general population of the world.
+    
+    We will first look at the ontological and epistemological background in Section~\ref{sec:ontological}.
+    Second, we will analyze the data in Section~\ref{sec:analysis}.
+    Finally, we conclude the results of the research in Section~\ref{sec:conclusion}.
+    
+    \section{Ontological and Epistemological Background} \label{sec:ontological}
+    This section is dedicated to explaining which ontological and epistemological position has been taken in this research and why.
+    In this research we differentiate between a person's biological sex, which is the anatomy of an individual's reproductive system, and a person's gender, which is the personal sense of one's gender and can be different from their biological sex.
+    When we use the word gender or sex in this report, we refer to a person's biological sex, unless noted otherwise.
+    We take a realist stance with regard to gender in this report: we have chosen to use binary genders, as the topic of gender identity is beyond the scope of this research. 
+    
+    Another reason we use binary genders is the biological (innate) and environmental (learned) differences between genders.
+    Differences have been found in fields such as mental health~\cite{afifi2007gender}, sexuality~\cite{oliver1993gender}, and aggression~\cite{del2015gender}.
+    While it is difficult to classify which differences are innate and which are learned, it is generally agreed upon that both are important contributors to the psychological differences between men and women~\cite{martin2010masculinity}.
+    Career-wise, the difference between male and female interests is larger in gender-egalitarian countries than in non gender-egalitarian countries~\cite{lippa2010gender}.
+    This suggests that the differences between genders is not decided by only environmental factors, but also possibly biological factors.
+    On this point of behavior and interest, we again take a realist stance.
+    We believe that the source of behavior and interest can be explained, whether it is innate or learned.
+    
+    Regarding the hypothesis whether there is sexism in computer science-related fields, the author takes the objectivism position.
+    Social phenomena like this can be considered just as real as physics and biology.
+    The only thing that makes anything ``real" is through the act of observation and shared experience.
+    Even if these observations are made through imperfect instruments, they form our subjective view of reality.
+    There is no difference between the realness of nature and social phenomena as far as we can say: both cannot exist without observation and consciousness.
+    
+    \section{Data Analysis} \label{sec:analysis}
+    We analyze the results of 93 survey results using Python 3 and the pandas and scipy packages.
+    
+    \subsection{Perceived Sexism}
+    We first take a look at if there is a difference in perceived sexism between men and women.
+    The statistics are shown in Table~\ref{table:perceived-sexism}.
+    
+    \begin{table}[ht]
+        {\renewcommand{\arraystretch}{1.2}
+            \begin{tabularx}{\columnwidth}{Y|c|c|c|c}
+                \hline
+                Sex & N & Mean & Std. Dev & Std. Error \\
+                \hline
+                Male & 43 & 2.67 & 1.23 & 0.19 \\
+                Female & 50 & 2.92 & 1.10 & 0.16 \\
+                \hline
+            \end{tabularx}
+        }
+        \caption{Statistics of perceived sexism on a scale from 1 to 5 in computer science-related fields by men and women.}
+        \label{table:perceived-sexism}
+    \end{table}
+
+    We perform Levene's test to try to reject the null hypothesis that there is no difference in perceived sexism between men and women.
+    Applying Levene's test on Table~\ref{table:perceived-sexism} gives a p-value of 0.227, which means we do not reject the null hypothesis and that there is no significant difference in the perception of sexism between men and women.
+    
+    \subsection{Computer Usage Confidence}
+    The next question we look at is the confidence level of men and women when using a computer.
+    We asked them to rate how comfortable they are using a computer on a scale from 1 to 5.
+    The statistics can be seen in Table~\ref{table:comfortable-computer}.
+    
+    \begin{table}[ht]
+        {\renewcommand{\arraystretch}{1.2}
+            \begin{tabularx}{\columnwidth}{Y|c|c|c|c}
+                \hline
+                Sex & N & Mean & Std. Dev & Std. Error \\
+                \hline
+                Male & 43 & 4.72 & 0.50 & 0.08 \\
+                Female & 50 & 4.28 & 0.76 & 0.11 \\
+                \hline
+            \end{tabularx}
+        }
+        \caption{Statistics of how comfortable men and women are with computers.}
+        \label{table:comfortable-computer}
+    \end{table}
+
+    We use Levene's test to try to reject the null hypothesis that there is no difference in confidence in computer use by men and women.
+    The p-value gives 0.004, meaning there is a significant difference in confidence between men and women.
+    
+    \subsection{Gender Stereotypes}
+    We asked men and women how they perceive gender stereotypes in computer science-related fields.
+    The statistics are shown in Table~\ref{table:stereotypes}.
+    We notice that men on average perceive gender stereotypes to be higher than women.
+    However, using Levene's test gives a p-value of 0.399, rejecting the null hypothesis and showing no significant difference in perception of gender stereotypes between men and women.
+    
+    \begin{table}[ht]
+        {\renewcommand{\arraystretch}{1.2}
+            \begin{tabularx}{\columnwidth}{Y|c|c|c|c}
+                \hline
+                Sex & N & Mean & Std. Dev & Std. Error \\
+                \hline
+                Male & 43 & 4.56 & 0.67 & 0.10 \\
+                Female & 50 & 3.92 & 0.88 & 0.12 \\
+                \hline
+            \end{tabularx}
+        }
+        \caption{Statistics of how men and women perceive gender stereotypes in computer science-related fields on a scale from 1 to 5.}
+        \label{table:stereotypes}
+    \end{table}
+
+    \subsection{Starting Age}
+    We are also curious how the age at which you first start to use a computer impacts your interest in computer science-related fields.
+    We compare the age at which men and women first used a computer (Table~\ref{table:age}).
+    Levene's test gives a p-value of 0.063, and while this is more than 0.05, we feel this difference is significant when you look at the table.
+    There also appears to be a correlation between at what age you first started using computers and how comfortable you feel using a computer.
+    
+    \begin{table}[ht]
+        {\renewcommand{\arraystretch}{1.2}
+            \begin{tabularx}{\columnwidth}{Y|c|c|c|c}
+                \hline
+                Sex & N & Mean & Std. Dev & Std. Error \\
+                \hline
+                Male & 43 & 9.13 & 4.98 & 0.76 \\
+                Female & 50 & 12.61 & 5.14 & 0.73 \\
+                \hline
+            \end{tabularx}
+        }
+        \caption{Statistics of at what age men and women first started using computers.}
+        \label{table:age}
+    \end{table}
+        
+    Pearon's $r$ shows a negative correlation of $-0.25$ between at what age you first started using computers and how comfortable you feel using a computer, with a p-value of $0.015$.
+    This further pushes our believe that the difference in starting age is significant and that this might have an impact on women's interest in computer science-related fields.
+     
+    \section{Conclusion} \label{sec:conclusion}
+    From the data collection and analysis we can make some conclusions about the perception of sexism and gender in computer-science related fields.
+    First, men and women agree there is some form of sexism and gender stereotypes in computer science-related fields.
+    Second, there appears to be no significant difference in the perception of sexism and stereotypes between men and women.
+    Third, men are more confident in using computers than women.
+    This may be linked to the fact that men start using computers at an earlier age, possibly influenced by environmental factors.
+    This research was conducted with data of limited diversity and sample size.
+    Further work with larger and more diverse data sets is needed before applying these conclusions to the general population.
+    
+    \printbibliography
+\end{document}
